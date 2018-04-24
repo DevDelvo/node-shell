@@ -1,4 +1,4 @@
-module.exports =  pwdFunc = () => {
-  console.log(`${process.cwd()}`)
+module.exports = (done) => {
+  done(`${process.cwd()}`);
   process.stdout.write('prompt >')
 };
