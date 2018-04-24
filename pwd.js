@@ -1,5 +1,5 @@
-module.exports =  pwdFunc = (cmd) => {
+module.exports =  pwdFunc = () => {
   console.log(`${process.cwd()}`)
-  process.stdout.write('\nprompt >')
+  process.stdout.write('prompt >')
 };
 
