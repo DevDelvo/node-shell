@@ -29,12 +29,14 @@ process.stdout.write('prompt >' );
 
 process.stdin.on('data', (data) => {
   const cmd = data.toString().trim();
+  const [command, arg] = cmd.split(' ')
   if (cmd === 'pwd') {
     return pwd(done);
   } else if (cmd === 'ls') {
     return ls(done);
-  } else if (cmd.slice(0,3) === 'cat') {
-    return cat(cmd.slice(4));
+  } else if (command === 'cat') {
+    // return cat(cmd.slice(4));
+    return cat(arg, done);
   } else if (cmd.slice(0,4) === 'curl') {
     return curl(cmd.slice(5));
   } else {
